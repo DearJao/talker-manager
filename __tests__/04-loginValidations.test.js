@@ -2,8 +2,7 @@ const frisby = require('frisby');
 
 const url = 'http://localhost:3000';
 
-describe('4 - Adicione as validações para o endpoint /login', () => {
- 
+describe.only('4 - Adicione as validações para o endpoint /login', () => {
   it('Será validado que não é possível fazer login sem o campo "email"', async () => {
     await frisby
       .post(`${url}/login`, {
@@ -32,7 +31,7 @@ describe('4 - Adicione as validações para o endpoint /login', () => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
         expect(result.message).toBe(
-          'O "email" deve ter o formato "email@email.com"',
+          'O "email" deve ter o formato "email@email.com"'
         );
       });
   });
@@ -65,7 +64,7 @@ describe('4 - Adicione as validações para o endpoint /login', () => {
         const { body } = responseLogin;
         const result = JSON.parse(body);
         expect(result.message).toBe(
-          'O "password" deve ter pelo menos 6 caracteres',
+          'O "password" deve ter pelo menos 6 caracteres'
         );
       });
   });
