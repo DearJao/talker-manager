@@ -60,10 +60,10 @@ routes.put('/talker/:id',
   res.status(200).json(updatedTalker);
 });
 
-routes.delete('/talker/:id', async (req, res) => {
+routes.delete('/talker/:id', tokenValidation, async (req, res) => {
   const { id } = req.params;
   await talkerDelete(Number(id));
-  return res.status(401).end();
+  return res.status(204).end();
 });
 
 module.exports = routes;

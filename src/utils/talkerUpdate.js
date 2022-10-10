@@ -10,8 +10,6 @@ async function talkerUpdate(id, updateTalkerData) {
     return [...talkerList, currentTalker];
   }, []);
 
-  // console.log(updatedTalkers);
-
   const updatedData = JSON.stringify(updatedTalkers);
 
   try {

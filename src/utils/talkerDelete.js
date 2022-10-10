@@ -1,5 +1,5 @@
 const path = require('path');
-const fs = require('fs');
+const fs = require('fs').promises;
 const talkerRead = require('./talkerRead');
 
 const talkerDelete = async (id) => {
